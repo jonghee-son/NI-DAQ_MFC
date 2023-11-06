@@ -104,7 +104,7 @@ BOOL CMy2019130023SJHDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
-	m_tabCtl.InsertItem(0, _T("µðÁöÅÐ I/O"), 0);
+	m_tabCtl.InsertItem(0, _T("ë””ì§€í„¸ I/O"), 0);
 
 	CRect Rect;
 	m_tabCtl.GetClientRect(&Rect);
