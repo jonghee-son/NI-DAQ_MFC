@@ -95,6 +95,8 @@ BEGIN_MESSAGE_MAP(CDlgDigitalIO, CDialogEx)
 	ON_STN_CLICKED(IDC_SW_TOG5, &CDlgDigitalIO::OnStnClickedSwTog5)
 	ON_STN_CLICKED(IDC_SW_TOG6, &CDlgDigitalIO::OnStnClickedSwTog6)
 	ON_STN_CLICKED(IDC_SW_TOG7, &CDlgDigitalIO::OnStnClickedSwTog7)
+	ON_BN_CLICKED(IDC_BTN_OUT_SEQ, &CDlgDigitalIO::OnBnClickedBtnOutSeq)
+	ON_BN_CLICKED(IDC_BTN_OUT_10, &CDlgDigitalIO::OnBnClickedBtnOut10)
 END_MESSAGE_MAP()
 
 
@@ -166,6 +168,8 @@ void CDlgDigitalIO::SetDigitalOutputBtnEnable(int nVal)
 		GetDlgItem(IDC_BTN_OUT_STOP)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BTN_OUT_HIGH)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BTN_OUT_LOW)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_OUT_SEQ)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_OUT_10)->EnableWindow(FALSE);
 
 		break;
 	case 1:
@@ -187,6 +191,8 @@ void CDlgDigitalIO::SetDigitalOutputBtnEnable(int nVal)
 		GetDlgItem(IDC_BTN_OUT_STOP)->EnableWindow(TRUE);
 		GetDlgItem(IDC_BTN_OUT_HIGH)->EnableWindow(TRUE);
 		GetDlgItem(IDC_BTN_OUT_LOW)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_OUT_SEQ)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_OUT_10)->EnableWindow(TRUE);
 
 		break;
 	}
@@ -397,4 +403,64 @@ BOOL CDlgDigitalIO::OnInitDialog()
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// EXCEPTION: OCX Property Pages should return FALSE
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnOutSeq()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 1);
+	}
+
+	Sleep(100);
+
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+		Sleep(100);
+	}
+
+	/*
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			if (((j + 1) % 2) == 0) {
+				SetDigitalOutputValue(j, 1);
+			}
+			else {
+				SetDigitalOutputValue(j, 0);
+			}
+		}
+		Sleep(100);
+		for (int j = 0; j < 8; j++) {
+			if (((j + 1) % 2) != 0) {
+				SetDigitalOutputValue(j, 1);
+			}
+			else {
+				SetDigitalOutputValue(j, 0);
+			}
+		}
+		Sleep(100);
+	}
+	*/
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnOut10()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 1);
+	}
+
+	Sleep(100);
+
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 8; j++) {
+			SetDigitalOutputValue(j, 0);
+			Sleep(1000);
+		}
+		for (int j = 0; j < 8; j++) {
+			SetDigitalOutputValue(j, 1);
+		}
+	}
 }

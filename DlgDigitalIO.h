@@ -72,4 +72,6 @@ public:
 	CEdit m_stOut6;
 	CEdit m_stOut7;
 	virtual BOOL OnInitDialog();
+	afx_msg void OnBnClickedBtnOutSeq();
+	afx_msg void OnBnClickedBtnOut10();
 };
