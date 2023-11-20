@@ -54,6 +54,9 @@
 #define IDC_CMB_IN_PORT                 1037
 #define IDC_ST_IN0                      1038
 #define IDC_LED0                        1039
+#define IDC_BTN_A                       1040
+#define IDC_BTN_F                       1041
+#define IDC_BTN_G                       1042
 #define IDC_ST_IN1                      1043
 #define IDC_ST_IN2                      1044
 #define IDC_ST_IN3                      1045
@@ -68,6 +71,24 @@
 #define IDC_LED5                        1054
 #define IDC_LED6                        1055
 #define IDC_LED7                        1056
+#define IDC_BTN_D                       1057
+#define IDC_BTN_B                       1058
+#define IDC_BTN_C                       1059
+#define IDC_BTN_E                       1060
+#define IDC_BTN_SEG_0                   1061
+#define IDC_BTN_SEG_1                   1062
+#define IDC_BTN_SEG_2                   1063
+#define IDC_BTN_SEG_3                   1064
+#define IDC_BTN_SEG_4                   1065
+#define IDC_BTN_SEG_5                   1066
+#define IDC_BTN_SEG_6                   1067
+#define IDC_BTN_SEG_7                   1068
+#define IDC_BTN_SEG_8                   1069
+#define IDC_BTN_SEG_9                   1070
+#define IDC_BTN_BCD_A                   1071
+#define IDC_BTN_BCD_B                   1072
+#define IDC_BTN_BCD_C                   1073
+#define IDC_BTN_BCD_D                   1074
 
 // Next default values for new objects
 // 
@@ -75,7 +96,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        138
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1040
+#define _APS_NEXT_CONTROL_VALUE         1072
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

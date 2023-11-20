@@ -105,6 +105,27 @@ public:
 	void GetDigitalInputRead();
 	void SetDigitalInputBtnEnable(int nVal);
 	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnBnClickedBtnA();
+	afx_msg void OnBnClickedBtnB();
+	afx_msg void OnBnClickedBtnC();
+	afx_msg void OnBnClickedBtnD();
+	afx_msg void OnBnClickedBtnE();
+	afx_msg void OnBnClickedBtnF();
+	afx_msg void OnBnClickedBtnG();
+	afx_msg void OnBnClickedBtnSeg0();
+	afx_msg void OnBnClickedBtnSeg1();
+	afx_msg void OnBnClickedBtnSeg2();
+	afx_msg void OnBnClickedBtnSeg3();
+	afx_msg void OnBnClickedBtnSeg4();
+	afx_msg void OnBnClickedBtnSeg5();
+	afx_msg void OnBnClickedBtnSeg6();
+	afx_msg void OnBnClickedBtnSeg7();
+	afx_msg void OnBnClickedBtnSeg8();
+	afx_msg void OnBnClickedBtnSeg9();
+	afx_msg void OnBnClickedBtnBcdA();
+	afx_msg void OnBnClickedBtnBcdB();
+	afx_msg void OnBnClickedBtnBcdC();
+	afx_msg void OnBnClickedBtnBcdD();
 };
 
 UINT ThreadDigitalInputFunc(LPVOID pParam);

@@ -144,6 +144,27 @@ BEGIN_MESSAGE_MAP(CDlgDigitalIO, CDialogEx)
 	ON_BN_CLICKED(IDC_BTN_IN_TH_START, &CDlgDigitalIO::OnBnClickedBtnInThStart)
 	ON_BN_CLICKED(IDC_BTN_IN_TH_STOP, &CDlgDigitalIO::OnBnClickedBtnInThStop)
 	ON_WM_TIMER()
+	ON_BN_CLICKED(IDC_BTN_A, &CDlgDigitalIO::OnBnClickedBtnA)
+	ON_BN_CLICKED(IDC_BTN_B, &CDlgDigitalIO::OnBnClickedBtnB)
+	ON_BN_CLICKED(IDC_BTN_C, &CDlgDigitalIO::OnBnClickedBtnC)
+	ON_BN_CLICKED(IDC_BTN_D, &CDlgDigitalIO::OnBnClickedBtnD)
+	ON_BN_CLICKED(IDC_BTN_E, &CDlgDigitalIO::OnBnClickedBtnE)
+	ON_BN_CLICKED(IDC_BTN_F, &CDlgDigitalIO::OnBnClickedBtnF)
+	ON_BN_CLICKED(IDC_BTN_G, &CDlgDigitalIO::OnBnClickedBtnG)
+	ON_BN_CLICKED(IDC_BTN_SEG_0, &CDlgDigitalIO::OnBnClickedBtnSeg0)
+	ON_BN_CLICKED(IDC_BTN_SEG_1, &CDlgDigitalIO::OnBnClickedBtnSeg1)
+	ON_BN_CLICKED(IDC_BTN_SEG_2, &CDlgDigitalIO::OnBnClickedBtnSeg2)
+	ON_BN_CLICKED(IDC_BTN_SEG_3, &CDlgDigitalIO::OnBnClickedBtnSeg3)
+	ON_BN_CLICKED(IDC_BTN_SEG_4, &CDlgDigitalIO::OnBnClickedBtnSeg4)
+	ON_BN_CLICKED(IDC_BTN_SEG_5, &CDlgDigitalIO::OnBnClickedBtnSeg5)
+	ON_BN_CLICKED(IDC_BTN_SEG_6, &CDlgDigitalIO::OnBnClickedBtnSeg6)
+	ON_BN_CLICKED(IDC_BTN_SEG_7, &CDlgDigitalIO::OnBnClickedBtnSeg7)
+	ON_BN_CLICKED(IDC_BTN_SEG_8, &CDlgDigitalIO::OnBnClickedBtnSeg8)
+	ON_BN_CLICKED(IDC_BTN_SEG_9, &CDlgDigitalIO::OnBnClickedBtnSeg9)
+	ON_BN_CLICKED(IDC_BTN_BCD_A, &CDlgDigitalIO::OnBnClickedBtnBcdA)
+	ON_BN_CLICKED(IDC_BTN_BCD_B, &CDlgDigitalIO::OnBnClickedBtnBcdB)
+	ON_BN_CLICKED(IDC_BTN_BCD_C, &CDlgDigitalIO::OnBnClickedBtnBcdC)
+	ON_BN_CLICKED(IDC_BTN_BCD_D, &CDlgDigitalIO::OnBnClickedBtnBcdD)
 END_MESSAGE_MAP()
 
 
@@ -216,6 +237,30 @@ void CDlgDigitalIO::SetDigitalOutputBtnEnable(int nVal)
 		GetDlgItem(IDC_BTN_OUT_HIGH)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BTN_OUT_LOW)->EnableWindow(FALSE);
 
+		GetDlgItem(IDC_BTN_A)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_B)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_C)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_D)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_E)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_F)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_G)->EnableWindow(FALSE);
+
+		GetDlgItem(IDC_BTN_SEG_0)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_1)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_2)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_3)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_4)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_5)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_6)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_7)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_8)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_SEG_9)->EnableWindow(FALSE);
+
+		GetDlgItem(IDC_BTN_BCD_A)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_BCD_B)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_BCD_C)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BTN_BCD_D)->EnableWindow(FALSE);
+
 		break;
 	case 1:
 		m_cmbOutPort.EnableWindow(FALSE);
@@ -236,6 +281,30 @@ void CDlgDigitalIO::SetDigitalOutputBtnEnable(int nVal)
 		GetDlgItem(IDC_BTN_OUT_STOP)->EnableWindow(TRUE);
 		GetDlgItem(IDC_BTN_OUT_HIGH)->EnableWindow(TRUE);
 		GetDlgItem(IDC_BTN_OUT_LOW)->EnableWindow(TRUE);
+
+		GetDlgItem(IDC_BTN_A)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_B)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_C)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_D)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_E)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_F)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_G)->EnableWindow(TRUE);
+
+		GetDlgItem(IDC_BTN_SEG_0)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_1)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_2)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_3)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_4)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_5)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_6)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_7)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_8)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_SEG_9)->EnableWindow(TRUE);
+
+		GetDlgItem(IDC_BTN_BCD_A)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_BCD_B)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_BCD_C)->EnableWindow(TRUE);
+		GetDlgItem(IDC_BTN_BCD_D)->EnableWindow(TRUE);
 
 		break;
 	}
@@ -655,4 +724,275 @@ void CDlgDigitalIO::OnTimer(UINT_PTR nIDEvent)
 	}
 
 	CDialogEx::OnTimer(nIDEvent);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnA()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[0] == 0) {
+		SetDigitalOutputValue(0, 1);
+	}
+	else {
+		SetDigitalOutputValue(0, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnB()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[1] == 0) {
+		SetDigitalOutputValue(1, 1);
+	}
+	else {
+		SetDigitalOutputValue(1, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnC()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[2] == 0) {
+		SetDigitalOutputValue(2, 1);
+	}
+	else {
+		SetDigitalOutputValue(2, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnD()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[3] == 0) {
+		SetDigitalOutputValue(3, 1);
+	}
+	else {
+		SetDigitalOutputValue(3, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnE()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[4] == 0) {
+		SetDigitalOutputValue(4, 1);
+	}
+	else {
+		SetDigitalOutputValue(4, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnF()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[5] == 0) {
+		SetDigitalOutputValue(5, 1);
+	}
+	else {
+		SetDigitalOutputValue(5, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnG()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[6] == 0) {
+		SetDigitalOutputValue(6, 1);
+	}
+	else {
+		SetDigitalOutputValue(6, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg0()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(4, 1);
+	SetDigitalOutputValue(5, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg1()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg2()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(4, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg3()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg4()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(5, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg5()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(5, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg6()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(4, 1);
+	SetDigitalOutputValue(5, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg7()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg8()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 1);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(4, 1);
+	SetDigitalOutputValue(5, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnSeg9()
+{
+	// TODO: Add your control notification handler code here
+	for (int i = 0; i < 8; i++) {
+		SetDigitalOutputValue(i, 0);
+	}
+	SetDigitalOutputValue(0, 1);
+	SetDigitalOutputValue(1, 1);
+	SetDigitalOutputValue(2, 1);
+	SetDigitalOutputValue(3, 1);
+	SetDigitalOutputValue(5, 1);
+	SetDigitalOutputValue(6, 1);
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnBcdA()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[0] == 0) {
+		SetDigitalOutputValue(0, 1);
+	}
+	else {
+		SetDigitalOutputValue(0, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnBcdB()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[1] == 0) {
+		SetDigitalOutputValue(1, 1);
+	}
+	else {
+		SetDigitalOutputValue(1, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnBcdC()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[2] == 0) {
+		SetDigitalOutputValue(2, 1);
+	}
+	else {
+		SetDigitalOutputValue(2, 0);
+	}
+}
+
+
+void CDlgDigitalIO::OnBnClickedBtnBcdD()
+{
+	// TODO: Add your control notification handler code here
+	if (m_nSwitchSt[3] == 0) {
+		SetDigitalOutputValue(3, 1);
+	}
+	else {
+		SetDigitalOutputValue(3, 0);
+	}
 }
