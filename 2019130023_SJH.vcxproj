@@ -191,22 +191,31 @@
   <ItemGroup>
     <ClInclude Include="2019130023_SJH.h" />
     <ClInclude Include="2019130023_SJHDlg.h" />
+    <ClInclude Include="3DMeterCtrl.h" />
+    <ClInclude Include="3DMeterMemDC.h" />
+    <ClInclude Include="CDlgAnalogIO.h" />
     <ClInclude Include="DlgDigitalIO.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="OScopeCtrl.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="staticcounter.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2019130023_SJH.cpp" />
     <ClCompile Include="2019130023_SJHDlg.cpp" />
+    <ClCompile Include="3DMeterCtrl.cpp" />
+    <ClCompile Include="CDlgAnalogIO.cpp" />
     <ClCompile Include="DlgDigitalIO.cpp" />
+    <ClCompile Include="OScopeCtrl.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StaticCounter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="My2019130023SJH.rc" />

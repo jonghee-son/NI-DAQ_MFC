@@ -105,6 +105,7 @@ BOOL CMy2019130023SJHDlg::OnInitDialog()
 
 	// TODO: Add extra initialization here
 	m_tabCtl.InsertItem(0, _T("디지털 I/O"), 0);
+	m_tabCtl.InsertItem(1, _T("아날로그 I/O"), 1);
 
 	CRect Rect;
 	m_tabCtl.GetClientRect(&Rect);
@@ -112,6 +113,10 @@ BOOL CMy2019130023SJHDlg::OnInitDialog()
 	m_dlgDigitalIO.SetWindowPos(NULL, 5, 25, Rect.Width() - 10, Rect.Height() - 30, SWP_SHOWWINDOW | SWP_NOZORDER);
 
 	m_pWndShow = &m_dlgDigitalIO;
+
+	m_tabCtl.GetClientRect(&Rect);
+	m_dlgAnalogIO.Create(IDD_ANALOGIO_DLG, &m_tabCtl);
+	m_dlgAnalogIO.SetWindowPos(NULL, 5, 25, Rect.Width() - 10, Rect.Height() - 30, SWP_HIDEWINDOW | SWP_NOZORDER);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -181,6 +186,10 @@ void CMy2019130023SJHDlg::OnTcnSelchangeTabCtl(NMHDR* pNMHDR, LRESULT* pResult)
 	case 0:
 		m_dlgDigitalIO.ShowWindow(SW_SHOW);
 		m_pWndShow = &m_dlgDigitalIO;
+		break;
+	case 1:
+		m_dlgAnalogIO.ShowWindow(SW_SHOW);
+		m_pWndShow = &m_dlgAnalogIO;
 		break;
 	}
 	*pResult = 0;
