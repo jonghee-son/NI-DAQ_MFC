@@ -72,7 +72,7 @@ void CDlgAnalogIO::GetAnalogInput()
 
 	DAQmxReadAnalogScalarF64(m_taskInPort, 10.0, &m_fInputVal, NULL);
 
-	m_stSeg.SetPos((float)m_fInputVal, true, 0.10);
+	m_stSeg.SetPos((float)m_fInputVal, true, (float)0.0, (float)10.0);
 	m_stMeter.UpdateNeedle((double)m_fInputVal);
 	m_InGraphCtrl.AppendPoint((double)m_fInputVal);
 
@@ -253,7 +253,8 @@ BOOL CDlgAnalogIO::OnInitDialog()
 
 	// Seven Segment Control
 	m_stSeg.SetFormatString(_T("%.2f"));
-	m_stSeg.SetBlankPadding(8);
+	m_stSeg.SetRange((float)0.0, (float)10.0);
+	m_stSeg.SetBlankPadding(5);
 	m_stSeg.SetColourFaded(RGB(40, 40, 40));
 	m_stSeg.SetBarHeight();
 	m_stSeg.SetColours(RGB(200, 200, 200), 0, RGB(150, 0, 0));
@@ -285,7 +286,7 @@ BOOL CDlgAnalogIO::OnInitDialog()
 	m_cmbInPort.SetCurSel(0);
 
 	m_taskInPort = 0;
-	m_stSeg.SetPos((float)0.0, true, 0.10);
+	m_stSeg.SetPos((float)0.0, true, (float)0.10);
 
 	// Button
 	SetAnalogInputBtnEnable(0);
