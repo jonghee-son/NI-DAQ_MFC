@@ -89,6 +89,7 @@ CString CDlgAnalogIO::GetFileName()
 	char Path[MAX_PATH] = { 0x00, };
 	char sDirectory[1000] = { 0x00, };
 	CString str = _T("");
+	CString strTmp1;
 	int nTime[7] = { 0, };
 
 	SYSTEMTIME systime;
@@ -103,14 +104,19 @@ CString CDlgAnalogIO::GetFileName()
 	
 	str.Format(_T("%04d%02d%02d_%02d%02d%02d%03d.txt"), nTime[0], nTime[1], nTime[2], nTime[3], nTime[4], nTime[5], nTime[6]);
 
-	GetModuleFileName(NULL, Path, 1024);
+	wchar_t wPath[MAX_PATH] = { 0x00, };
+	mbstowcs(wPath, Path, MAX_PATH);
+	GetModuleFileName(NULL, wPath, MAX_PATH);
 	CString strTmp;
-	CString strPath = Path;
+	CString strPath = wPath;
 	strPath = strPath.Left(strPath.ReverseFind('\\'));
-	strcpy(Path, strPath + _T("\\") + str);
-	strncpy(sDirectory, Path, strlen(Path));
+	CString strTmp2 = strPath + _T("\\") + str;
+	CT2A ascii(strTmp2, CP_UTF8);
+	strcpy_s(Path, sizeof(Path), ascii.m_psz);
+	strncpy_s(sDirectory, sizeof(sDirectory), Path, _TRUNCATE);
+	strTmp1 = (LPSTR)sDirectory;
 
-	return sDirectory;
+	return strTmp1;
 }
 
 
@@ -119,7 +125,7 @@ void CDlgAnalogIO::SetSaveData(double bVal)
 	// TODO: Add your implementation code here.
 	int nLen = 0;
 	FILE* src;
-	CString str = "";
+	CString str = _T("");
 	int nTime[7] = { 0, };
 
 	SYSTEMTIME systime;
@@ -136,12 +142,15 @@ void CDlgAnalogIO::SetSaveData(double bVal)
 	char sDataBody[500] = { 0, };
 	char sDataHeader[255] = { 0, };
 
-	src = fopen(m_strFileName, _T("a"));
-	strcpy(sDataBody, str);
-	strcat(sDataBody, _T("    "));
+	CT2A ascii(str, CP_UTF8);
+	CT2A ascii2(m_strFileName, CP_UTF8);
+	src = fopen(ascii2.m_psz, "a");
+	strcpy(sDataBody, ascii.m_psz);
+	strcat(sDataBody, "    ");
 	str.Format(_T("%5.2f"), bVal);
-	strcat(sDataBody, str);
-	strcat(sDataBody, _T("\n"));
+	CT2A ascii3(str, CP_UTF8);
+	strcat(sDataBody, ascii3.m_psz);
+	strcat(sDataBody, "\n");
 
 	if (src != NULL) {
 		nLen = strlen(sDataBody);
@@ -303,7 +312,10 @@ void CDlgAnalogIO::OnBnClickedBtnInStart()
 		strAI01.Format(_T("Dev1/ai%d"), m_cmbInPort.GetCurSel());
 		strAI02.Format(_T("AI%d"), m_cmbInPort.GetCurSel());
 
-		DAQmxErrChk(nError = DAQmxCreateAIVoltageChan(m_taskInPort, strAI01, strAI02, terminalConfig, minVal, maxVal, DAQmx_Val_Volts, ""));
+		CT2A ascii(strAI01, CP_UTF8);
+		CT2A ascii2(strAI02, CP_UTF8);
+
+		DAQmxErrChk(nError = DAQmxCreateAIVoltageChan(m_taskInPort, ascii.m_psz, ascii2.m_psz, terminalConfig, minVal, maxVal, DAQmx_Val_Volts, ""));
 
 		DAQmxErrChk(nError = DAQmxStartTask(m_taskInPort));
 	}
