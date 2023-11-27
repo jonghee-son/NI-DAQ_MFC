@@ -14,6 +14,7 @@
 #define IDB_BMP_PUSH_S                  135
 #define IDB_BMP_TOG_OFF                 136
 #define IDB_BMP_TOG_ON                  137
+#define IDD_ANALOGIO_DLG                138
 #define IDC_TAB_CTL                     1000
 #define IDC_CMB_OUT_PORT                1001
 #define IDC_BTN_OUT_START               1002
@@ -54,15 +55,24 @@
 #define IDC_CMB_IN_PORT                 1037
 #define IDC_ST_IN0                      1038
 #define IDC_LED0                        1039
+#define IDC_BTN_TH_START                1042
 #define IDC_ST_IN1                      1043
+#define IDC_BTN_TH_STOP                 1043
 #define IDC_ST_IN2                      1044
+#define IDC_BTN_TI_START                1044
 #define IDC_ST_IN3                      1045
+#define IDC_BTN_TI_STOP                 1045
 #define IDC_ST_IN4                      1046
+#define IDC_BTN_SAVE_START              1046
 #define IDC_ST_IN5                      1047
+#define IDC_BTN_SAVE_STOP               1047
 #define IDC_ST_IN6                      1048
 #define IDC_ST_IN7                      1049
+#define IDC_ST_IN_GRAPH                 1049
 #define IDC_LED1                        1050
+#define IDC_ST_SEG                      1050
 #define IDC_LED2                        1051
+#define IDC_ST_METER                    1051
 #define IDC_LED3                        1052
 #define IDC_LED4                        1053
 #define IDC_LED5                        1054
@@ -73,9 +83,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        138
+#define _APS_NEXT_RESOURCE_VALUE        140
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1040
+#define _APS_NEXT_CONTROL_VALUE         1052
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

@@ -4,6 +4,7 @@
 
 #pragma once
 #include "DlgDigitalIO.h"
+#include "CDlgAnalogIO.h"
 
 
 // CMy2019130023SJHDlg dialog
@@ -14,6 +15,7 @@ public:
 	CMy2019130023SJHDlg(CWnd* pParent = nullptr);	// standard constructor
 
 	CDlgDigitalIO m_dlgDigitalIO;
+	CDlgAnalogIO m_dlgAnalogIO;
 	CWnd* m_pWndShow;
 
 // Dialog Data
