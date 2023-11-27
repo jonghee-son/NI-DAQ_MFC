@@ -1,6 +1,5 @@
 // CDlgAnalogIO.cpp : implementation file
 //
-#pragma warning(disable:4996)
 
 #include "pch.h"
 #include "2019130023_SJH.h"
@@ -105,7 +104,8 @@ CString CDlgAnalogIO::GetFileName()
 	str.Format(_T("%04d%02d%02d_%02d%02d%02d%03d.txt"), nTime[0], nTime[1], nTime[2], nTime[3], nTime[4], nTime[5], nTime[6]);
 
 	wchar_t wPath[MAX_PATH] = { 0x00, };
-	mbstowcs(wPath, Path, MAX_PATH);
+	size_t nSize;
+	mbstowcs_s(&nSize, wPath, MAX_PATH, Path, MAX_PATH);
 	GetModuleFileName(NULL, wPath, MAX_PATH);
 	CString strTmp;
 	CString strPath = wPath;
@@ -127,6 +127,7 @@ void CDlgAnalogIO::SetSaveData(double bVal)
 	FILE* src;
 	CString str = _T("");
 	int nTime[7] = { 0, };
+	errno_t err;
 
 	SYSTEMTIME systime;
 	GetLocalTime(&systime);
@@ -144,13 +145,13 @@ void CDlgAnalogIO::SetSaveData(double bVal)
 
 	CT2A ascii(str, CP_UTF8);
 	CT2A ascii2(m_strFileName, CP_UTF8);
-	src = fopen(ascii2.m_psz, "a");
-	strcpy(sDataBody, ascii.m_psz);
-	strcat(sDataBody, "    ");
+	err = fopen_s(&src, ascii2.m_psz, "a");
+	strcpy_s(sDataBody, sizeof(sDataBody), ascii.m_psz);
+	strcat_s(sDataBody, sizeof(sDataBody), "    ");
 	str.Format(_T("%5.2f"), bVal);
 	CT2A ascii3(str, CP_UTF8);
-	strcat(sDataBody, ascii3.m_psz);
-	strcat(sDataBody, "\n");
+	strcat_s(sDataBody, sizeof(sDataBody), ascii3.m_psz);
+	strcat_s(sDataBody, sizeof(sDataBody), "\n");
 
 	if (src != NULL) {
 		nLen = strlen(sDataBody);
