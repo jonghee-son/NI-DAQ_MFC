@@ -286,7 +286,7 @@ BOOL CDlgAnalogIO::OnInitDialog()
 	m_cmbInPort.SetCurSel(0);
 
 	m_taskInPort = 0;
-	m_stSeg.SetPos((float)0.0, true, (float)0.10);
+	m_stSeg.SetPos((float)0.0, true, (float)0.0, (float)10.0);
 
 	// Button
 	SetAnalogInputBtnEnable(0);
